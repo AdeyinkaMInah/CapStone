@@ -1,0 +1,4 @@
+node_modules
+# Ignore some common but less critical issues
+10000	IGNORE
+10001	IGNORE

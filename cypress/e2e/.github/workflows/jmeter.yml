@@ -1,0 +1,17 @@
+name: JMeter Tests
+
+on: [push, pull_request]
+
+jobs:
+  jmeter-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Install JMeter
+      run: sudo apt-get install -y jmeter
+
+    - name: Run JMeter Tests
+      run: jmeter -n -t ContactListApp.jmx -l results.jtl

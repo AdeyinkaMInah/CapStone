@@ -1,0 +1,30 @@
+{
+  "name": "finalproject",
+  "version": "1.0.0",
+  "description": "This is a sample project for running Cypress tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^13.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdeyinkaMInah/NEW-AUTOMATED-TEST-CODINGTEMPLE.git"
+  },
+  "keywords": [
+    "cypress",
+    "tests",
+    "automation"
+  ],
+  "author": "Adeyinka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdeyinkaMInah/NEW-AUTOMATED-TEST-CODINGTEMPLE/issues"
+  },
+  "homepage": "https://github.com/AdeyinkaMInah/NEW-AUTOMATED-TEST-CODINGTEMPLE#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
