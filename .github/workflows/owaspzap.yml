@@ -1,0 +1,16 @@
+name: OWASP ZAP Scan
+
+on:
+    push:
+        branches:
+            - owaspzap
+
+jobs:
+    zap_scan:
+        runs-on: windows-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Run ZAP scan
+              run: zap-cli --spider https://thinking-tester-contact-list.herokuapp.com/” && zap-cli --active scan https://thinking-tester-contact-list.herokuapp.com/”
+              
