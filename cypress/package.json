@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AdeyinkaMInah/NEW-AUTOMATED-TEST-CODINGTEMPLE.git"
+    "url": "git+https://github.com/AdeyinkaMInah/QA-CapStone.git"
   },
   "keywords": [
     "cypress",
@@ -21,9 +21,9 @@
   "author": "Adeyinka",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AdeyinkaMInah/NEW-AUTOMATED-TEST-CODINGTEMPLE/issues"
+    "url": "https://github.com/AdeyinkaMInah/QA-CapStone.git/issues"
   },
-  "homepage": "https://github.com/AdeyinkaMInah/NEW-AUTOMATED-TEST-CODINGTEMPLE#readme",
+  "homepage": "https://github.com/AdeyinkaMInah/QA-CapStone.git#readme",
   "dependencies": {
     "express": "^4.19.2"
   }
