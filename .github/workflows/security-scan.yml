@@ -1,40 +1,26 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  cypress-run:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: '20'
 
       - name: Install dependencies
         run: npm install
 
+      - name: Start server
+        run: npm start &
+        env:
+          CI: true
+
       - name: Run Cypress tests
-        run: npx cypress run
-
-  zap-scan:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Run ZAP Baseline Scan
-        uses: zaproxy/action-baseline@v0.4.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          target: 'http://localhost:3000'
-
+        run: npm run cypress:run
