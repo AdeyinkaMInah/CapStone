@@ -1,6 +1,12 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build-and-test:
@@ -12,15 +18,24 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20'
+          node-version: '14' 
 
       - name: Install dependencies
         run: npm install
 
-      - name: Start server
-        run: npm start &
-        env:
-          CI: true
+      - name: Verify Node.js and npm versions
+        run: |
+          node --version
+          npm --version
+
+      - name: List files in current directory
+        run: ls -a
+
+      - name: Show package.json contents
+        run: cat package.json
 
       - name: Run Cypress tests
-        run: npm run cypress:run
+        run: npx cypress run --headless
+
+      # - name: Stop server
+      #   run: kill $(jobs -p) || true
