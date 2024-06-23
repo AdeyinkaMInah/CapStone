@@ -23,6 +23,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Cypress
+        run: |
+          npm install cypress --save-dev
+          npx cypress install
+
       - name: Verify Node.js and npm versions
         run: |
           node --version
