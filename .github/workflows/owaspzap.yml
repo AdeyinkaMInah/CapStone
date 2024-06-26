@@ -20,7 +20,6 @@ jobs:
         uses: zaproxy/action-baseline@v0.4.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          docker_name: 'owasp/zap2docker-stable'  # Use the stable docker image
+          docker_name: 'owasp/zap2docker-weekly'  # Use the weekly docker image
           target: 'https://thinking-tester-contact-list.herokuapp.com/'  # The target URL for the scan
-          rules_file_name: '.zap/rules.tsv'  # Path to a file containing the desired rules configuration (optional)
           cmd_options: '-a'  # Additional command line options for the ZAP baseline scan (optional)
