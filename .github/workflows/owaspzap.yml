@@ -1,6 +1,5 @@
 name: OWASP ZAP Baseline Scan
 
-# This workflow will trigger on a push to any branch and on pull requests to main
 on:
   push:
     branches:
@@ -14,14 +13,14 @@ jobs:
     runs-on: ubuntu-latest  # Use the latest Ubuntu runner
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Run ZAP Baseline Scan
-      uses: zaproxy/action-baseline@v0.4.0
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        docker_name: 'owasp/zap2docker-stable'  # Use the stable docker image
-        target: ' https://thinking-tester-contact-list.herokuapp.com/#'  # The target URL for the scan
-        rules_file_name: '.zap/rules.tsv'  # Path to a file containing the desired rules configuration (optional)
-        cmd_options: '-a'  # Additional command line options for the ZAP baseline scan (optional)
+      - name: Run ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.4.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          docker_name: 'owasp/zap2docker-stable'  # Use the stable docker image
+          target: 'https://thinking-tester-contact-list.herokuapp.com/'  # The target URL for the scan
+          rules_file_name: '.zap/rules.tsv'  # Path to a file containing the desired rules configuration (optional)
+          cmd_options: '-a'  # Additional command line options for the ZAP baseline scan (optional)
